@@ -429,7 +429,7 @@ var boxSetup=[ // Format: ["Title", "#color"],
     function open(url) { // url handler w/ clickable boxes
         var x=1;
         for(var i=0; i<links.length; i++) {
-            if((links[i][1]==url && x==pg) || !enableTitle) { window.location=url; }
+            if((links[i][1]==url && x==pg) || !enableTitle) { window.open(url); }
             else if(links[i][1]==url)                       { go(x); }
 
             if(links[i][0]=="---" && links[i][1]=="---")    { x++; }
@@ -438,7 +438,7 @@ var boxSetup=[ // Format: ["Title", "#color"],
 
     function handleKeyPress(e,url,q) { // query
         var key=e.keyCode || e.which
-        if(key==13) { window.location=url+q; }
+        if(key==13) { window.open(url+q); }
     }
 
     var scrollLock=false,sl_timer;
