@@ -222,7 +222,7 @@ var boxSetup=[ // Format: ["Title", "#color"],
         // Other -          box-5
         ["Portfolio",                       "http://www.lloret.io/"],
         ["Google Drive",                    "https://drive.google.com/drive/"],
-        ["Mail",                           "https://mail.google.com"],
+        ["Mail",                            "https://mail.google.com"],
         ["Dreamhost",                       "https://panel.dreamhost.com/"],
         ["Pastebin",                        "https://pastebin.com"],
         ["Desmos",                          "https://www.desmos.com/calculator"],
@@ -360,8 +360,8 @@ var boxSetup=[ // Format: ["Title", "#color"],
                 } else {
                     // links
                     var lnk_js=["",""];
-                    if(enableTitle) { lnk_js=["javascript:open(\"","\");"]; }
-                    $('box-'+c).innerHTML+="<a href='"+lnk_js[0]+links[i][1]+lnk_js[1]+"' target='_self'>"+links[i][0]+"</a><br />";
+                    if(enableTitle) { lnk_js=["javascript:openUrl(\"","\");"]; }
+                    $('box-'+c).innerHTML+="<a href='"+lnk_js[0]+links[i][1]+lnk_js[1]+"' target='_blank'>"+links[i][0]+"</a><br />";
                 }
             }
 
@@ -426,7 +426,7 @@ var boxSetup=[ // Format: ["Title", "#color"],
         }
     }
 
-    function open(url) { // url handler w/ clickable boxes
+    function openUrl(url) { // url handler w/ clickable boxes
         var x=1;
         for(var i=0; i<links.length; i++) {
             if((links[i][1]==url && x==pg) || !enableTitle) { window.open(url); }
